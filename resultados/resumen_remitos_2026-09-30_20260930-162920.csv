@@ -1,0 +1,24 @@
+﻿nro_remito;cliente;destinatario;localidad;estado;estado_codigo;tracking_id;intentos;detalle;accion_sugerida
+R-10000466;Distribuidora Pampa SA;Corralón San Martín;San Miguel de Tucumán;Ya existía en Expreso Andino;YA_EXISTIA;ANDC4BD591C;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000469;Laboratorios Andes SA;Casa de Repuestos Tito;La Plata;Ya existía en Expreso Andino;YA_EXISTIA;ANDBC0F442A;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000477;Textil Del Plata SRL;Panadería La Espiga;Pilar;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Falta el código postal del destinatario;Corregir el remito en el sistema de LogiSur y volver a correr el proceso
+R-10000479;Distribuidora Pampa SA;Pinturerías del Oeste;Córdoba;Ya existía en Expreso Andino;YA_EXISTIA;ANDED024A60;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000486;Ferretería Industrial Norte SA;Distribuidora Lucía;Caballito;Ya existía en Expreso Andino;YA_EXISTIA;AND3E68D82C;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000507;Repuestos Del Litoral SRL;Maderera El Pino;Paraná;Ya existía en Expreso Andino;YA_EXISTIA;ANDE08AB5D0;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual). Venía duplicado en el export: se procesó una sola vez.;
+R-10000513;Ferretería Industrial Norte SA;Kiosco El Sol;Córdoba;Ya existía en Expreso Andino;YA_EXISTIA;AND66DEDF3D;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000516;Ferretería Industrial Norte SA;Sanitarios Rivera;Caballito;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Falta la dirección del destinatario;Corregir el remito en el sistema de LogiSur y volver a correr el proceso
+R-10000519;Repuestos Del Litoral SRL;Mercado Los Álamos;Villa María;Ya existía en Expreso Andino;YA_EXISTIA;ANDB617F8CA;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000527;Repuestos Del Litoral SRL;Librería Central;Mar del Plata;Ya existía en Expreso Andino;YA_EXISTIA;AND5A8C356E;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000536;Repuestos Del Litoral SRL;Corralón San Martín;Palermo;Ya existía en Expreso Andino;YA_EXISTIA;AND609207E9;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000541;Ferretería Industrial Norte SA;Carnicería El Gaucho;San Miguel de Tucumán;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Cantidad de bultos debe ser al menos 1 (vino 0);Corregir el remito en el sistema de LogiSur y volver a correr el proceso
+R-10000548;Distribuidora Pampa SA;Veterinaria Patitas;Villa María;Ya existía en Expreso Andino;YA_EXISTIA;AND8E87909B;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000554;Distribuidora Pampa SA;Tienda Sofía;Mar del Plata;Ya existía en Expreso Andino;YA_EXISTIA;AND07BF7D36;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000567;Ferretería Industrial Norte SA;Corralón San Martín;Palermo;Ya existía en Expreso Andino;YA_EXISTIA;ANDF9B2D380;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000572;Distribuidora Pampa SA;Ferretería El Tornillo;Rafaela;Ya existía en Expreso Andino;YA_EXISTIA;ANDCCF97549;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000582;Distribuidora Pampa SA;Tienda Sofía;Rafaela;Ya existía en Expreso Andino;YA_EXISTIA;ANDE19FF019;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000589;Distribuidora Pampa SA;Rotisería Doña Ana;Córdoba;Ya existía en Expreso Andino;YA_EXISTIA;ANDF13BB944;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000590;Repuestos Del Litoral SRL;Carnicería El Gaucho;San Isidro;Ya existía en Expreso Andino;YA_EXISTIA;AND6E6DF578;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000612;Distribuidora Pampa SA;Pinturerías del Oeste;Mar del Plata;Ya existía en Expreso Andino;YA_EXISTIA;ANDA184CDD3;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000622;Ferretería Industrial Norte SA;Neumáticos Sur;San Miguel de Tucumán;Ya existía en Expreso Andino;YA_EXISTIA;AND2E317D56;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000637;Repuestos Del Litoral SRL;Kiosco El Sol;Córdoba;Ya existía en Expreso Andino;YA_EXISTIA;AND6B4EAA78;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
+R-10000657;Textil Del Plata SRL;Vinoteca Malbec;Caballito;Ya existía en Expreso Andino;YA_EXISTIA;AND0E7830F9;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;

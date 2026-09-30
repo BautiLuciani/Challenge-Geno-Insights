@@ -4,11 +4,11 @@ R-10000469;Laboratorios Andes SA;Casa de Repuestos Tito;La Plata;Cargado;CARGADO
 R-10000477;Textil Del Plata SRL;Panadería La Espiga;Pilar;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Falta el código postal del destinatario;Corregir el remito en el sistema de LogiSur y volver a correr el proceso
 R-10000479;Distribuidora Pampa SA;Pinturerías del Oeste;Córdoba;Cargado;CARGADO;ANDED024A60;1;;
 R-10000486;Ferretería Industrial Norte SA;Distribuidora Lucía;Caballito;Cargado;CARGADO;AND3E68D82C;1;;
-R-10000507;Repuestos Del Litoral SRL;Maderera El Pino;Paraná;Cargado;CARGADO;ANDE08AB5D0;1;Venía duplicado en el export: se envió una sola vez.;
+R-10000507;Repuestos Del Litoral SRL;Maderera El Pino;Paraná;Cargado;CARGADO;ANDE08AB5D0;1;Venía duplicado en el export: se procesó una sola vez.;
 R-10000513;Ferretería Industrial Norte SA;Kiosco El Sol;Córdoba;Cargado;CARGADO;AND66DEDF3D;1;;
 R-10000516;Ferretería Industrial Norte SA;Sanitarios Rivera;Caballito;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Falta la dirección del destinatario;Corregir el remito en el sistema de LogiSur y volver a correr el proceso
 R-10000519;Repuestos Del Litoral SRL;Mercado Los Álamos;Villa María;Cargado;CARGADO;ANDB617F8CA;1;;
-R-10000527;Repuestos Del Litoral SRL;Librería Central;Mar del Plata;Ya existía en Expreso Andino;YA_EXISTIA;AND5A8C356E;1;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual);
+R-10000527;Repuestos Del Litoral SRL;Librería Central;Mar del Plata;Ya existía en Expreso Andino;YA_EXISTIA;AND5A8C356E;;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual).;
 R-10000536;Repuestos Del Litoral SRL;Corralón San Martín;Palermo;Cargado;CARGADO;AND609207E9;1;;
 R-10000541;Ferretería Industrial Norte SA;Carnicería El Gaucho;San Miguel de Tucumán;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Cantidad de bultos debe ser al menos 1 (vino 0);Corregir el remito en el sistema de LogiSur y volver a correr el proceso
 R-10000548;Distribuidora Pampa SA;Veterinaria Patitas;Villa María;Cargado;CARGADO;AND8E87909B;1;;

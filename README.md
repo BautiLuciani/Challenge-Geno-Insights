@@ -69,7 +69,7 @@ Resumen: resultados/resumen_remitos_2026-09-30_<fecha-hora>.md
 Detalle: resultados/resumen_remitos_2026-09-30_<fecha-hora>.csv
 ```
 
-Si se vuelve a correr, los 20 envíos válidos aparecen como **"ya existían"** y no se duplica ninguno.
+Si se vuelve a correr, los 20 envíos válidos aparecen como **"ya existían"** y no se duplica ninguno (en la segunda corrida no se hace ningún POST).
 
 ### 4. (Opcional) Listar los envíos atrasados
 
@@ -79,12 +79,14 @@ python3 -m expreso_bridge.atrasados data/remitos_2026-09-30.json --hoy 2026-10-0
 
 `--hoy` es opcional: si no se pasa, se usa la fecha real del día.
 
+Si algún envío no se pudo consultar, el listado avisa que está **incompleto** y el comando termina con código `1`. Nunca informa "0 atrasados" cuando en realidad no pudo consultar. Si la API no responde al inicio, corta enseguida con código `2`.
+
 ### Opciones
 
 | Opción | Default | Para qué |
 | --- | --- | --- |
 | `--api-url` | `$EXPRESO_API_URL` o `http://localhost:8000` | Apuntar a otro entorno |
-| `--salida` | `resultados` | Carpeta donde se guardan los resúmenes |
+| `--salida` | `resultados` | Carpeta donde se guardan los resúmenes y listados |
 | `--max-intentos` | `4` | Intentos por envío ante errores de la API (solo carga) |
 
 ### Códigos de salida
@@ -94,8 +96,10 @@ Pensados para cuando el proceso se automatice y algo tenga que decidir si alerta
 | Código | Significado |
 | --- | --- |
 | `0` | Corrida completa. Puede haber remitos rechazados por datos: eso lo resuelve operaciones, el proceso hizo su trabajo. |
-| `1` | Quedaron envíos pendientes porque la API siguió fallando. Conviene volver a correr más tarde (no duplica). |
-| `2` | Error de configuración o de entrada: falta la API key, la key es inválida, no existe el archivo o la API no responde al inicio. |
+| `1` | Quedaron envíos sin cargar porque la API siguió fallando (conviene volver a correr más tarde, no duplica) o porque respondió algo inesperado (revisar el detalle en el resumen). |
+| `2` | Error de configuración o de entrada: falta la API key, la key es inválida, no existe el archivo o la API no responde al inicio. Si la key deja de funcionar **a mitad de la corrida**, el proceso se detiene pero **igual genera el resumen** con lo que se alcanzó a cargar y lo que quedó sin procesar. |
+
+El comando de atrasados usa `0` (listado completo), `1` (listado incompleto) y `2` (configuración o API inaccesible).
 
 ### Tests
 
@@ -103,7 +107,7 @@ Pensados para cuando el proceso se automatice y algo tenga que decidir si alerta
 python3 -m unittest -v
 ```
 
-33 tests. Incluyen un test de **punta a punta** que levanta la API de prueba del kit dentro del test, corre el proceso completo dos veces y verifica que cada envío exista una sola vez.
+37 tests. Incluyen tests de **punta a punta** que levantan la API de prueba del kit dentro del test: corren el proceso completo dos veces, verifican cómo termina cada caso trampa (503, 500 que igual crea el envío, envío que ya existía) y que cada envío exista una sola vez. También simulan una API key que deja de funcionar a mitad de la corrida y el listado de atrasados con la API caída.
 
 ---
 
@@ -140,7 +144,7 @@ export.json ──► extract ──► transform ──► load ──► repor
 | `expreso_bridge/extract.py` | Leer el export, filtrar Expreso Andino y resolver duplicados |
 | `expreso_bridge/transform.py` | Convertir cada remito al formato de la API y validarlo. Si algo no se puede interpretar con seguridad, se rechaza con un motivo claro |
 | `expreso_bridge/api_client.py` | Hablar HTTP con la API (solo `urllib`). Los `GET` se reintentan acá mismo |
-| `expreso_bridge/load.py` | Cargar un envío y decidir qué pasó según la respuesta (el corazón de la solución) |
+| `expreso_bridge/load.py` | Cargar un envío: consultar si ya existe, crearlo con reintentos y decidir qué pasó según la respuesta (el corazón de la solución) |
 | `expreso_bridge/pipeline.py` | Orquestar la corrida completa |
 | `expreso_bridge/report.py` | Generar el resumen en CSV y en Markdown |
 | `expreso_bridge/__main__.py` | Punto de entrada por línea de comandos |
@@ -155,11 +159,13 @@ export.json ──► extract ──► transform ──► load ──► repor
 
 ### 1. Qué hacer con cada respuesta de la API
 
-| Respuesta | Qué significa | Qué hace el programa |
+Antes de crear cada envío se consulta si ya existe (`GET /v1/shipments?external_ref=`). Si existe, es ♻️ **ya existía** y no se hace ningún POST. Si no existe, se crea:
+
+| Respuesta al crear | Qué significa | Qué hace el programa |
 | --- | --- | --- |
 | `201` | Creado | ✅ **Cargado**, se guarda el `tracking_id` |
-| `409` | Ya existe ese `external_ref` | ♻️ **Ya existía**. No es un error |
 | `409` después de un `5xx` o un timeout | El envío se había creado aunque la API respondió con error | ✅ **Cargado (confirmado al reintentar)** |
+| `409` sin errores previos | No existía hace un instante: lo cargó otra persona o proceso en paralelo | ♻️ **Ya existía**. No es un error |
 | `422` | Datos inválidos | ❌ **Rechazado**, con el detalle de la API. No se reintenta: mandar lo mismo daría el mismo error |
 | `500` / `503` / `429` / timeout / sin conexión | Falla del lado del expreso | 🔁 Se reintenta con espera creciente: 1 s, 2 s, 4 s (hasta 4 intentos) |
 | `401` | API key inválida | 🛑 Se corta la corrida: si falla uno, van a fallar todos |
@@ -167,11 +173,15 @@ export.json ──► extract ──► transform ──► load ──► repor
 
 ### 2. Cómo se evita duplicar envíos (idempotencia)
 
-La API garantiza que `external_ref` es único y responde `409` si ya existe. Uso el número de remito como `external_ref`, así que **la propia API es la fuente de verdad**. Por eso el programa **no guarda estado local**: un archivo local puede quedar desactualizado (por ejemplo, si alguien corre el proceso desde otra máquina) y suma complejidad sin aportar seguridad.
+La API garantiza que `external_ref` es único y responde `409` si ya existe. Uso el número de remito como `external_ref`, así que **la propia API es la fuente de verdad**: antes de crear cada envío se consulta si ya existe. Por eso el programa **no guarda estado local**: un archivo local puede quedar desactualizado (por ejemplo, si alguien corre el proceso desde otra máquina) y suma complejidad sin aportar seguridad.
+
+Aunque la consulta previa fallara o hubiera una carrera con otra carga, la unicidad de `external_ref` en la API sigue impidiendo duplicados: en el peor caso el POST devuelve `409`.
 
 ### 3. Un error del servidor no significa que el envío no se creó
 
-Un `500` o un timeout no garantizan que el envío **no** se haya creado: el servidor pudo haberlo guardado y fallar después. Si reintentamos y la API responde `409`, ese envío es el nuestro, no un duplicado de otra corrida. Por eso se marca como "cargado (confirmado al reintentar)" y no como error ni como "ya existía".
+Un `500` o un timeout no garantizan que el envío **no** se haya creado: el servidor pudo haberlo guardado y fallar después. Como antes de empezar verificamos que el envío **no existía**, si después de un error reintentamos y la API responde `409`, ese envío lo creamos nosotros. Por eso se marca como "cargado (confirmado al reintentar)" y no como error ni como "ya existía".
+
+El único caso que no se puede distinguir es que otra persona o proceso cargue ese mismo remito justo en los segundos entre la consulta y el POST. Es muy poco probable y, aun así, no genera duplicados: solo podría cambiar la etiqueta con que se informa.
 
 ### 4. Validar antes de enviar, y no adivinar
 
@@ -214,7 +224,7 @@ Los tomé como razonables. En un proyecto real los confirmaría con LogiSur o co
 
 ### Limitación conocida
 
-Si un remito se modifica en LogiSur **después** de haberse cargado (por ejemplo, cambia la dirección), al volver a correr la API responde `409` y el programa lo informa como "ya existía". **Los datos viejos siguen en Expreso Andino**, y la API no tiene un endpoint para actualizar un envío. Hoy eso requiere intervención manual. Ver el punto 6 de producción.
+Si un remito se modifica en LogiSur **después** de haberse cargado (por ejemplo, cambia la dirección), al volver a correr el programa lo encuentra en la API y lo informa como "ya existía". **Los datos viejos siguen en Expreso Andino**, y la API no tiene un endpoint para actualizar un envío. Hoy eso requiere intervención manual. Ver el punto 6 de producción.
 
 ---
 
@@ -224,15 +234,15 @@ En [`resultados/`](resultados/) están los archivos que generó el programa cont
 
 | Archivo | Qué muestra |
 | --- | --- |
-| `resumen_remitos_2026-09-30_20260930-160354.md` / `.csv` | **Primera corrida:** 19 cargados, 1 ya existía, 3 no cargados por datos |
-| `resumen_remitos_2026-09-30_20260930-160402.md` / `.csv` | **Segunda corrida** (simula que alguien lo vuelve a correr por error): 0 cargados, 20 ya existían, **ningún duplicado** |
-| `atrasados_2026-10-03_20260930-160403.md` / `.csv` | Envíos al 03/10/2026: 2 atrasados, 2 con incidencia, 9 en tiempo, 7 entregados |
+| `resumen_remitos_2026-09-30_20260930-162912.md` / `.csv` | **Primera corrida:** 19 cargados, 1 ya existía, 3 no cargados por datos |
+| `resumen_remitos_2026-09-30_20260930-162920.md` / `.csv` | **Segunda corrida** (simula que alguien lo vuelve a correr por error): 0 cargados, 20 ya existían, **ningún duplicado** |
+| `atrasados_2026-10-03_20260930-162921.md` / `.csv` | Los 23 envíos al 03/10/2026: 2 atrasados, 2 con incidencia, 9 en tiempo, 7 entregados y 3 sin seguimiento (los que no se cargaron por datos) |
 
 Casos destacados de la primera corrida:
 
 - **R-10000554** y **R-10000582**: la API respondió `503` dos veces y se cargaron al **tercer intento**.
 - **R-10000612**: la API respondió `500`, pero el envío se había creado. El reintento devolvió `409` → **cargado (confirmado al reintentar)**, sin duplicado.
-- **R-10000527**: ya existía en Expreso Andino desde una corrida anterior → **ya existía**.
+- **R-10000527**: ya existía en Expreso Andino desde una corrida anterior. La consulta previa lo detecta → **ya existía**, sin intentar crearlo.
 - **R-10000477**, **R-10000516** y **R-10000541**: no enviados por falta de código postal, dirección en blanco y 0 bultos.
 
 ---
@@ -250,3 +260,8 @@ Casos destacados de la primera corrida:
 9. **Si el volumen crece mucho**: cargar envíos en paralelo con un límite de concurrencia, y respetar el header `Retry-After` si la API lo envía.
 10. **CI con GitHub Actions** que corra los tests en cada push.
 11. **Correr el listado de atrasados todos los días** y avisar solo cuando aparece un atraso nuevo.
+12. **Casos borde que no aparecen en estos datos**, pero que conviene cubrir antes de usarlo todos los días:
+    - Duplicados que difieren solo en cómo se escribió el transportista: hoy se toman como conflicto.
+    - Números ambiguos como `"1.500"` o `"nan"`: rechazarlos en vez de interpretarlos.
+    - Avisar en el resumen si aparecen transportistas parecidos a Expreso Andino que no se tomaron (ej: `"Expreso Andino S.A."`).
+    - Validar que `--max-intentos` sea al menos 1 y atrapar algunos errores de red poco comunes.
