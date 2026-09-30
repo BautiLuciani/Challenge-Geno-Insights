@@ -3,9 +3,11 @@
 Códigos de salida (para cuando se automatice con un cron / tarea programada):
   0 -> corrida completa. Puede haber remitos rechazados por datos: eso lo
        resuelve operaciones, el proceso hizo bien su trabajo.
-  1 -> quedaron envíos pendientes por fallas de Expreso Andino: conviene
-       volver a correr más tarde (no duplica).
+  1 -> quedaron envíos sin cargar por fallas de Expreso Andino (conviene volver
+       a correr más tarde, no duplica) o por una respuesta inesperada de la API.
   2 -> error de configuración o de entrada (API key, archivo, API caída al inicio).
+       Si la API key deja de funcionar a mitad de la corrida, igual se genera
+       el resumen con lo que se alcanzó a cargar.
 """
 import argparse
 import os
@@ -14,7 +16,7 @@ import sys
 from . import load
 from .api_client import ErrorApi, ErrorAutenticacion, ExpresoClient
 from .pipeline import procesar
-from .report import escribir_resumen
+from .report import CARGADOS, REQUIEREN_ATENCION, escribir_resumen
 
 
 def main(argv=None) -> int:
@@ -54,12 +56,15 @@ def main(argv=None) -> int:
 
     c = corrida.contar
     print(f"Remitos de Expreso Andino: {len(corrida.filas)} (de {corrida.total_export} en el export)")
-    print(f"  Cargados:        {c(load.CARGADO, load.CARGADO_TRAS_ERROR)}")
+    print(f"  Cargados:        {c(*CARGADOS)}")
     print(f"  Ya existían:     {c(load.YA_EXISTIA)}")
-    print(f"  No cargados:     {c(load.RECHAZADO_DATOS, load.RECHAZADO_API, load.CONFLICTO, load.ERROR_TEMPORAL, load.ERROR)}")
+    print(f"  No cargados:     {c(*REQUIEREN_ATENCION)}")
     print(f"Resumen: {ruta_md}")
     print(f"Detalle: {ruta_csv}")
 
+    if corrida.interrumpida:
+        print(f"ERROR: {corrida.interrumpida}. Revisá EXPRESO_API_KEY.", file=sys.stderr)
+        return 2
     return 1 if c(load.ERROR_TEMPORAL, load.ERROR) else 0
 
 

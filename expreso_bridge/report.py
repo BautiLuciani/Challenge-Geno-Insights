@@ -20,6 +20,7 @@ ESTADO_LEGIBLE = {
     load.CONFLICTO: "No enviado: remito duplicado con datos distintos",
     load.ERROR_TEMPORAL: "Pendiente: Expreso Andino no respondió",
     load.ERROR: "Error inesperado",
+    load.NO_PROCESADO: "No procesado: la corrida se interrumpió",
 }
 
 ACCION = {
@@ -31,11 +32,12 @@ ACCION = {
     load.CONFLICTO: "Definir cuál es el remito correcto, corregir el export y volver a correr",
     load.ERROR_TEMPORAL: "Volver a correr el proceso más tarde (no duplica envíos)",
     load.ERROR: "Avisar a sistemas con el detalle",
+    load.NO_PROCESADO: "Revisar la API key y volver a correr el proceso (no duplica)",
 }
 
 CARGADOS = (load.CARGADO, load.CARGADO_TRAS_ERROR)
 REQUIEREN_ATENCION = (load.RECHAZADO_DATOS, load.RECHAZADO_API, load.CONFLICTO,
-                      load.ERROR_TEMPORAL, load.ERROR)
+                      load.ERROR_TEMPORAL, load.ERROR, load.NO_PROCESADO)
 
 COLUMNAS = ["nro_remito", "cliente", "destinatario", "localidad", "estado", "estado_codigo",
             "tracking_id", "intentos", "detalle", "accion_sugerida"]
@@ -66,9 +68,17 @@ def generar_markdown(corrida: Corrida) -> str:
         f"- **Export:** `{corrida.archivo_export}`",
         f"- **Corrida:** {corrida.inicio:%d/%m/%Y %H:%M:%S}"
         + (f" (duró {(corrida.fin - corrida.inicio).total_seconds():.1f} s)" if corrida.fin else ""),
-        f"- **Remitos en el export:** {corrida.total_export} → **{andino} de Expreso Andino** "
+        f"- **Remitos en el export:** {corrida.total_export} "
         f"({corrida.otros_transportes} de otros transportes, se ignoran)",
+        f"- **Expreso Andino:** {corrida.filas_andino} filas → **{andino} remitos únicos**"
+        + (f" ({corrida.filas_andino - andino} fila(s) repetida(s) o sin número, ver Notas)"
+           if corrida.filas_andino != andino else ""),
         "",
+    ]
+    if corrida.interrumpida:
+        lineas += [f"> ⛔ **{corrida.interrumpida}.** Los remitos marcados como \"No procesado\" "
+                   "no se enviaron: revisar la API key y volver a correr (no duplica).", ""]
+    lineas += [
         "## Totales",
         "",
         "| Resultado | Cantidad |",
@@ -104,7 +114,7 @@ def generar_markdown(corrida: Corrida) -> str:
 
     notas = []
     if corrida.duplicados_identicos:
-        notas.append("Remitos repetidos en el export con datos idénticos (se enviaron una sola vez): "
+        notas.append("Remitos repetidos en el export con datos idénticos (se procesaron una sola vez): "
                      + ", ".join(corrida.duplicados_identicos) + ".")
     if corrida.sin_numero:
         notas.append(f"{corrida.sin_numero} registro(s) de Expreso Andino sin número de remito: no se pudieron procesar.")

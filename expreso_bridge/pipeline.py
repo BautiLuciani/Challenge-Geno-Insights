@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Optional
 
 from . import load
-from .api_client import ExpresoClient
+from .api_client import ErrorAutenticacion, ExpresoClient
 from .extract import filtrar_expreso_andino, leer_export
 from .transform import NormalizadorProvincias, transformar
 
@@ -36,6 +36,12 @@ class Corrida:
     sin_numero: int = 0
     duplicados_identicos: list = field(default_factory=list)
     filas: list = field(default_factory=list)
+    interrumpida: str = ""  # motivo, si la corrida se cortó a mitad de camino
+
+    @property
+    def filas_andino(self) -> int:
+        """Filas de Expreso Andino en el export, contando las repetidas."""
+        return self.total_export - self.otros_transportes
 
     def contar(self, *estados) -> int:
         return sum(1 for f in self.filas if f.estado in estados)
@@ -74,15 +80,26 @@ def procesar(ruta_export, client: ExpresoClient, registros: Optional[list] = Non
 
     for remito in lectura.remitos:
         datos = _datos_remito(remito)
+        if corrida.interrumpida:
+            corrida.filas.append(Fila(**datos, estado=load.NO_PROCESADO, detalle=corrida.interrumpida))
+            continue
+
         t = transformar(remito, provincias)
         if not t.ok:
             corrida.filas.append(Fila(**datos, estado=load.RECHAZADO_DATOS, detalle="; ".join(t.errores)))
             continue
 
-        r = load.cargar_envio(client, t.payload)
+        try:
+            r = load.cargar_envio(client, t.payload)
+        except ErrorAutenticacion as e:
+            # Si la key deja de funcionar a mitad de camino, no seguimos (van a fallar todos),
+            # pero sí dejamos registro de lo que ya se cargó y de lo que quedó sin procesar.
+            corrida.interrumpida = f"La corrida se cortó: {e}"
+            corrida.filas.append(Fila(**datos, estado=load.NO_PROCESADO, detalle=corrida.interrumpida))
+            continue
         detalle = r.detalle
         if datos["nro_remito"] in lectura.duplicados_identicos:
-            detalle = " ".join(x for x in [detalle, "Venía duplicado en el export: se envió una sola vez."] if x)
+            detalle = " ".join(x for x in [detalle, "Venía duplicado en el export: se procesó una sola vez."] if x)
         corrida.filas.append(Fila(**datos, estado=r.estado, tracking_id=r.tracking_id,
                                   intentos=r.intentos, detalle=detalle))
 
