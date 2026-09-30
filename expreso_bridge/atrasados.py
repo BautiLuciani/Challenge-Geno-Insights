@@ -10,6 +10,12 @@ Criterios:
 
 Los envíos se buscan en la API por external_ref (nro_remito) a partir del export:
 no depende de ningún archivo local de corridas anteriores.
+
+Si algún envío no se pudo consultar, el listado está INCOMPLETO: se avisa en el
+resumen y el comando termina con código 1. Nunca se informa "0 atrasados" como
+si estuviera todo bien cuando en realidad no se pudo consultar.
+
+Códigos de salida: 0 ok · 1 listado incompleto · 2 configuración / API inaccesible.
 """
 import argparse
 import csv
@@ -104,8 +110,14 @@ def _celda(texto) -> str:
 
 def generar_markdown(seguimientos: list, hoy: date, archivo_export: str) -> str:
     cuenta = lambda c: sum(1 for s in seguimientos if s.clasificacion == c)  # noqa: E731
+    sin_datos = cuenta(SIN_DATOS)
     lineas = [
         "# Envíos atrasados · Expreso Andino", "",
+    ]
+    if sin_datos:
+        lineas += [f"> ⚠️ **Listado incompleto:** {sin_datos} envío(s) no se pudieron consultar en la API. "
+                   "Pueden faltar atrasados: volver a correr más tarde.", ""]
+    lineas += [
         f"- **Fecha de referencia (hoy):** {hoy:%d/%m/%Y}",
         f"- **Envíos consultados:** los de Expreso Andino del export `{archivo_export}`",
         "- **Atrasado:** no entregado y con fecha estimada anterior a hoy.", "",
@@ -172,7 +184,7 @@ def main(argv=None) -> int:
     parser.add_argument("--hoy", type=date.fromisoformat, default=date.today(),
                         help="Fecha de referencia AAAA-MM-DD (default: hoy)")
     parser.add_argument("--api-url", default=os.environ.get("EXPRESO_API_URL", "http://localhost:8000"))
-    parser.add_argument("--salida", default="resultados")
+    parser.add_argument("--salida", default="resultados", help="Carpeta donde se guarda el listado (default: resultados)")
     args = parser.parse_args(argv)
 
     api_key = os.environ.get("EXPRESO_API_KEY")
@@ -183,10 +195,17 @@ def main(argv=None) -> int:
         print(f"ERROR: no existe el archivo {args.export}", file=sys.stderr)
         return 2
 
+    client = ExpresoClient(args.api_url, api_key)
     try:
-        seguimientos = consultar(leer_export(args.export), ExpresoClient(args.api_url, api_key), args.hoy)
+        registros = leer_export(args.export)
+        # Chequeo rápido de que la API responde antes de consultar envío por envío.
+        client.provincias()
+        seguimientos = consultar(registros, client, args.hoy)
     except ErrorAutenticacion as e:
         print(f"ERROR: {e}. Revisá EXPRESO_API_KEY.", file=sys.stderr)
+        return 2
+    except ErrorApi as e:
+        print(f"ERROR: no se pudo consultar la API de Expreso Andino ({e}).", file=sys.stderr)
         return 2
     except ValueError as e:
         print(f"ERROR: el export no tiene el formato esperado ({e}).", file=sys.stderr)
@@ -199,6 +218,10 @@ def main(argv=None) -> int:
           f"· Con incidencia: {incidencias}")
     print(f"Resumen: {ruta_md}")
     print(f"Detalle: {ruta_csv}")
+    sin_datos = sum(1 for s in seguimientos if s.clasificacion == SIN_DATOS)
+    if sin_datos:
+        print(f"ATENCIÓN: listado incompleto, {sin_datos} envío(s) no se pudieron consultar.", file=sys.stderr)
+        return 1
     return 0
 
 
