@@ -103,7 +103,7 @@ Pensados para cuando el proceso se automatice y algo tenga que decidir si alerta
 python3 -m unittest -v
 ```
 
-29 tests. Incluyen un test de **punta a punta** que levanta la API de prueba del kit dentro del test, corre el proceso completo dos veces y verifica que cada envío exista una sola vez.
+33 tests. Incluyen un test de **punta a punta** que levanta la API de prueba del kit dentro del test, corre el proceso completo dos veces y verifica que cada envío exista una sola vez.
 
 ---
 
