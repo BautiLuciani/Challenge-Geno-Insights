@@ -1,0 +1,24 @@
+﻿nro_remito;destinatario;localidad;situacion;tracking_id;status_api;fecha_estimada;dias_atraso;detalle
+R-10000466;Corralón San Martín;San Miguel de Tucumán;En tiempo;ANDC4BD591C;IN_TRANSIT;2026-10-03;;
+R-10000469;Casa de Repuestos Tito;La Plata;Entregado;ANDBC0F442A;DELIVERED;2026-10-01;;
+R-10000477;Panadería La Espiga;Pilar;No está cargado en Expreso Andino;;;;;
+R-10000479;Pinturerías del Oeste;Córdoba;En tiempo;ANDED024A60;CREATED;2026-10-06;;
+R-10000486;Distribuidora Lucía;Caballito;Entregado;AND3E68D82C;DELIVERED;2026-10-02;;
+R-10000507;Maderera El Pino;Paraná;En tiempo;ANDE08AB5D0;CREATED;2026-10-06;;
+R-10000513;Kiosco El Sol;Córdoba;Atrasado;AND66DEDF3D;IN_TRANSIT;2026-10-02;1;
+R-10000516;Sanitarios Rivera;Caballito;No está cargado en Expreso Andino;;;;;
+R-10000519;Mercado Los Álamos;Villa María;En tiempo;ANDB617F8CA;IN_TRANSIT;2026-10-05;;
+R-10000527;Librería Central;Mar del Plata;Con incidencia;AND5A8C356E;EXCEPTION;2026-10-06;;
+R-10000536;Corralón San Martín;Palermo;Entregado;AND609207E9;DELIVERED;2026-10-06;;
+R-10000541;Carnicería El Gaucho;San Miguel de Tucumán;No está cargado en Expreso Andino;;;;;
+R-10000548;Veterinaria Patitas;Villa María;Atrasado;AND8E87909B;IN_TRANSIT;2026-10-02;1;
+R-10000554;Tienda Sofía;Mar del Plata;En tiempo;AND07BF7D36;CREATED;2026-10-05;;
+R-10000567;Corralón San Martín;Palermo;En tiempo;ANDF9B2D380;IN_TRANSIT;2026-10-04;;
+R-10000572;Ferretería El Tornillo;Rafaela;Con incidencia;ANDCCF97549;EXCEPTION;2026-10-03;;
+R-10000582;Tienda Sofía;Rafaela;En tiempo;ANDE19FF019;IN_TRANSIT;2026-10-06;;
+R-10000589;Rotisería Doña Ana;Córdoba;En tiempo;ANDF13BB944;IN_TRANSIT;2026-10-06;;
+R-10000590;Carnicería El Gaucho;San Isidro;Entregado;AND6E6DF578;DELIVERED;2026-10-05;;
+R-10000612;Pinturerías del Oeste;Mar del Plata;Entregado;ANDA184CDD3;DELIVERED;2026-10-05;;
+R-10000622;Neumáticos Sur;San Miguel de Tucumán;En tiempo;AND2E317D56;IN_TRANSIT;2026-10-06;;
+R-10000637;Kiosco El Sol;Córdoba;Entregado;AND6B4EAA78;DELIVERED;2026-10-06;;
+R-10000657;Vinoteca Malbec;Caballito;Entregado;AND0E7830F9;DELIVERED;2026-10-05;;

@@ -54,6 +54,23 @@ class TestPuntaAPunta(unittest.TestCase):
             if fila.estado != load.RECHAZADO_DATOS:
                 self.assertEqual(len(self.client.buscar_por_ref(fila.nro_remito)), 1, fila.nro_remito)
 
+    def test_atrasados_despues_de_cargar(self):
+        from datetime import date
+        from expreso_bridge import atrasados
+        from expreso_bridge.extract import leer_export
+
+        procesar(EXPORT, self.client)
+        hoy = date(2026, 10, 3)
+        seguimientos = atrasados.consultar(leer_export(EXPORT), self.client, hoy)
+
+        self.assertEqual(len(seguimientos), 23)
+        no_cargados = {s.nro_remito for s in seguimientos if s.clasificacion == atrasados.NO_CARGADO}
+        self.assertEqual(no_cargados, {"R-10000477", "R-10000516", "R-10000541"})
+        for s in seguimientos:
+            if s.clasificacion == atrasados.ATRASADO:
+                self.assertNotEqual(s.status, "DELIVERED")
+                self.assertLess(date.fromisoformat(s.estimated_delivery), hoy)
+
     def test_api_key_invalida(self):
         from expreso_bridge.api_client import ErrorAutenticacion
         self.client.api_key = "mal"
