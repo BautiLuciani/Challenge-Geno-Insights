@@ -59,7 +59,8 @@ def cargar_envio(client: ExpresoClient, payload: dict) -> ResultadoCarga:
         else:
             body = resp.body or {}
             if resp.status == 201:
-                return ResultadoCarga(ref, CARGADO, body.get("tracking_id"), intento)
+                detalle = f"Se cargó en el intento {intento} (antes: {ultimo_error})" if intento > 1 else ""
+                return ResultadoCarga(ref, CARGADO, body.get("tracking_id"), intento, detalle)
 
             if resp.status == 409:
                 tracking = body.get("tracking_id") or _tracking_por_ref(client, ref)

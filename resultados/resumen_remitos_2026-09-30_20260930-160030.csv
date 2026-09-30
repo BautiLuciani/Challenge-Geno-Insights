@@ -1,0 +1,24 @@
+﻿nro_remito;cliente;destinatario;localidad;estado;estado_codigo;tracking_id;intentos;detalle;accion_sugerida
+R-10000466;Distribuidora Pampa SA;Corralón San Martín;San Miguel de Tucumán;Cargado;CARGADO;ANDC4BD591C;1;;
+R-10000469;Laboratorios Andes SA;Casa de Repuestos Tito;La Plata;Cargado;CARGADO;ANDBC0F442A;1;;
+R-10000477;Textil Del Plata SRL;Panadería La Espiga;Pilar;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Falta el código postal del destinatario;Corregir el remito en el sistema de LogiSur y volver a correr el proceso
+R-10000479;Distribuidora Pampa SA;Pinturerías del Oeste;Córdoba;Cargado;CARGADO;ANDED024A60;1;;
+R-10000486;Ferretería Industrial Norte SA;Distribuidora Lucía;Caballito;Cargado;CARGADO;AND3E68D82C;1;;
+R-10000507;Repuestos Del Litoral SRL;Maderera El Pino;Paraná;Cargado;CARGADO;ANDE08AB5D0;1;Venía duplicado en el export: se envió una sola vez.;
+R-10000513;Ferretería Industrial Norte SA;Kiosco El Sol;Córdoba;Cargado;CARGADO;AND66DEDF3D;1;;
+R-10000516;Ferretería Industrial Norte SA;Sanitarios Rivera;Caballito;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Falta la dirección del destinatario;Corregir el remito en el sistema de LogiSur y volver a correr el proceso
+R-10000519;Repuestos Del Litoral SRL;Mercado Los Álamos;Villa María;Cargado;CARGADO;ANDB617F8CA;1;;
+R-10000527;Repuestos Del Litoral SRL;Librería Central;Mar del Plata;Ya existía en Expreso Andino;YA_EXISTIA;AND5A8C356E;1;Ya estaba cargado en Expreso Andino (corrida anterior o carga manual);
+R-10000536;Repuestos Del Litoral SRL;Corralón San Martín;Palermo;Cargado;CARGADO;AND609207E9;1;;
+R-10000541;Ferretería Industrial Norte SA;Carnicería El Gaucho;San Miguel de Tucumán;No enviado: datos incompletos o inválidos;RECHAZADO_DATOS;;;Cantidad de bultos debe ser al menos 1 (vino 0);Corregir el remito en el sistema de LogiSur y volver a correr el proceso
+R-10000548;Distribuidora Pampa SA;Veterinaria Patitas;Villa María;Cargado;CARGADO;AND8E87909B;1;;
+R-10000554;Distribuidora Pampa SA;Tienda Sofía;Mar del Plata;Cargado;CARGADO;AND07BF7D36;3;Se cargó en el intento 3 (antes: HTTP 503);
+R-10000567;Ferretería Industrial Norte SA;Corralón San Martín;Palermo;Cargado;CARGADO;ANDF9B2D380;1;;
+R-10000572;Distribuidora Pampa SA;Ferretería El Tornillo;Rafaela;Cargado;CARGADO;ANDCCF97549;1;;
+R-10000582;Distribuidora Pampa SA;Tienda Sofía;Rafaela;Cargado;CARGADO;ANDE19FF019;3;Se cargó en el intento 3 (antes: HTTP 503);
+R-10000589;Distribuidora Pampa SA;Rotisería Doña Ana;Córdoba;Cargado;CARGADO;ANDF13BB944;1;;
+R-10000590;Repuestos Del Litoral SRL;Carnicería El Gaucho;San Isidro;Cargado;CARGADO;AND6E6DF578;1;;
+R-10000612;Distribuidora Pampa SA;Pinturerías del Oeste;Mar del Plata;Cargado (confirmado al reintentar);CARGADO_CONFIRMADO_AL_REINTENTAR;ANDA184CDD3;2;La API respondió 'HTTP 500' pero el envío se había creado;
+R-10000622;Ferretería Industrial Norte SA;Neumáticos Sur;San Miguel de Tucumán;Cargado;CARGADO;AND2E317D56;1;;
+R-10000637;Repuestos Del Litoral SRL;Kiosco El Sol;Córdoba;Cargado;CARGADO;AND6B4EAA78;1;;
+R-10000657;Textil Del Plata SRL;Vinoteca Malbec;Caballito;Cargado;CARGADO;AND0E7830F9;1;;
