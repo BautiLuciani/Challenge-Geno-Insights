@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Estado local de ejecución (se regenera en cada máquina)
+state/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store

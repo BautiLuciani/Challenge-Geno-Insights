@@ -1,0 +1,1022 @@
+[
+  {
+    "nro_remito": "R-10000458",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Distribuidora Lucía",
+      "direccion": "9 de Julio 4258",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1148045089"
+    },
+    "bultos": 2,
+    "peso_kg": 82.9,
+    "volumen_m3": 0.89,
+    "valor_declarado": 1888629.73,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000459",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Ferretería El Tornillo",
+      "direccion": "Sarmiento 3442",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1146366340"
+    },
+    "bultos": 7,
+    "peso_kg": 80.6,
+    "volumen_m3": 1.11,
+    "valor_declarado": 849149.6,
+    "transportista": "Cruz del Norte",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000466",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Corralón San Martín",
+      "direccion": "Moreno 2612",
+      "localidad": "San Miguel de Tucumán",
+      "provincia": "Tucuman",
+      "codigo_postal": "4000",
+      "telefono": "1152648445"
+    },
+    "bultos": 10,
+    "peso_kg": "145,1",
+    "volumen_m3": 1.44,
+    "valor_declarado": 1710485.08,
+    "transportista": "Expreso Andino",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000469",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Laboratorios Andes SA",
+    "destinatario": {
+      "razon_social": "Casa de Repuestos Tito",
+      "direccion": "Moreno 100",
+      "localidad": "La Plata",
+      "provincia": "Buenos Aires",
+      "codigo_postal": "1900",
+      "telefono": "1145062867"
+    },
+    "bultos": 5,
+    "peso_kg": "126,0",
+    "volumen_m3": 1.24,
+    "valor_declarado": 1459325.3,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000470",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Veterinaria Patitas",
+      "direccion": "Av. Colón 696",
+      "localidad": "Neuquén",
+      "provincia": "Neuquen",
+      "codigo_postal": "8300",
+      "telefono": "1162592032"
+    },
+    "bultos": 1,
+    "peso_kg": 99.8,
+    "volumen_m3": 0.41,
+    "valor_declarado": 1610382.97,
+    "transportista": "TRANSPORTE LITORAL",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000471",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Distribuidora Lucía",
+      "direccion": "Av. San Martín 4223",
+      "localidad": "La Plata",
+      "provincia": "Buenos Aires",
+      "codigo_postal": "1900",
+      "telefono": "1149699430"
+    },
+    "bultos": 1,
+    "peso_kg": 171.8,
+    "volumen_m3": 0.89,
+    "valor_declarado": 273393.24,
+    "transportista": "Cruz del Norte",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000475",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Almacén Santa Rita",
+      "direccion": "Urquiza 558",
+      "localidad": "Rafaela",
+      "provincia": "Santa Fe",
+      "codigo_postal": "2300",
+      "telefono": "1152952729"
+    },
+    "bultos": 6,
+    "peso_kg": "113,4",
+    "volumen_m3": 1.79,
+    "valor_declarado": 823927.03,
+    "transportista": "CRUZ DEL NORTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000477",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Panadería La Espiga",
+      "direccion": "Belgrano 2184",
+      "localidad": "Pilar",
+      "provincia": "BA",
+      "codigo_postal": "",
+      "telefono": "1168182425"
+    },
+    "bultos": 7,
+    "peso_kg": 29.5,
+    "volumen_m3": 0.56,
+    "valor_declarado": 2353414.83,
+    "transportista": "Expreso Andino",
+    "servicio": "NORMAL",
+    "observaciones": "Cliente no informó CP"
+  },
+  {
+    "nro_remito": "R-10000478",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Heladería Polo",
+      "direccion": "Italia 4790",
+      "localidad": "Neuquén",
+      "provincia": "Neuquen",
+      "codigo_postal": "8300",
+      "telefono": "1146451970"
+    },
+    "bultos": 2,
+    "peso_kg": 152.2,
+    "volumen_m3": 0.7,
+    "valor_declarado": 1990011.07,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000479",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Pinturerías del Oeste",
+      "direccion": "Urquiza 3518",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1158295679"
+    },
+    "bultos": 10,
+    "peso_kg": "37,2",
+    "volumen_m3": 0.8,
+    "valor_declarado": 188522.0,
+    "transportista": "EXPRESO ANDINO ",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000486",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Distribuidora Lucía",
+      "direccion": "Urquiza 3106",
+      "localidad": "Caballito",
+      "provincia": "Capital Federal",
+      "codigo_postal": "1405",
+      "telefono": "1169121247"
+    },
+    "bultos": 11,
+    "peso_kg": "12,5",
+    "volumen_m3": 1.67,
+    "valor_declarado": 2347726.59,
+    "transportista": "Expreso Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000488",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Frutería Primavera",
+      "direccion": "Moreno 1056",
+      "localidad": "Mar del Plata",
+      "provincia": "Bs. As.",
+      "codigo_postal": "7600",
+      "telefono": "1153634128"
+    },
+    "bultos": 11,
+    "peso_kg": 97.5,
+    "volumen_m3": 1.5,
+    "valor_declarado": 22134.09,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000495",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Óptica Visión",
+      "direccion": "Urquiza 3280",
+      "localidad": "La Plata",
+      "provincia": "Buenos Aires",
+      "codigo_postal": "1900",
+      "telefono": "1140770205"
+    },
+    "bultos": 6,
+    "peso_kg": 9.2,
+    "volumen_m3": 1.14,
+    "valor_declarado": 1641525.35,
+    "transportista": "CRUZ DEL NORTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000501",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Autopartes Ruta 8",
+      "direccion": "9 de Julio 1169",
+      "localidad": "Paraná",
+      "provincia": "Entre Ríos",
+      "codigo_postal": "3100",
+      "telefono": "1164542907"
+    },
+    "bultos": 3,
+    "peso_kg": 132.1,
+    "volumen_m3": 0.83,
+    "valor_declarado": 991753.5,
+    "transportista": "Cruz del Norte",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000507",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Maderera El Pino",
+      "direccion": "Urquiza 3254",
+      "localidad": "Paraná",
+      "provincia": "Entre Ríos",
+      "codigo_postal": "3100",
+      "telefono": "1150562256"
+    },
+    "bultos": 5,
+    "peso_kg": "121,8",
+    "volumen_m3": 0.36,
+    "valor_declarado": 1410842.73,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000510",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Corralón San Martín",
+      "direccion": "Belgrano 3140",
+      "localidad": "Mar del Plata",
+      "provincia": "Bs. As.",
+      "codigo_postal": "7600",
+      "telefono": "1148664788"
+    },
+    "bultos": 9,
+    "peso_kg": "92,6",
+    "volumen_m3": 0.17,
+    "valor_declarado": 1074506.64,
+    "transportista": "CRUZ DEL NORTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000513",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Kiosco El Sol",
+      "direccion": "Urquiza 1585",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1141369079"
+    },
+    "bultos": 11,
+    "peso_kg": 15.2,
+    "volumen_m3": 0.78,
+    "valor_declarado": 1948017.62,
+    "transportista": "Exp. Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000507",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Maderera El Pino",
+      "direccion": "Urquiza 3254",
+      "localidad": "Paraná",
+      "provincia": "Entre Ríos",
+      "codigo_postal": "3100",
+      "telefono": "1150562256"
+    },
+    "bultos": 5,
+    "peso_kg": "121,8",
+    "volumen_m3": 0.36,
+    "valor_declarado": 1410842.73,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000516",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Sanitarios Rivera",
+      "direccion": "  ",
+      "localidad": "Caballito",
+      "provincia": "Capital Federal",
+      "codigo_postal": "1405",
+      "telefono": "1164567152"
+    },
+    "bultos": 11,
+    "peso_kg": 132.4,
+    "volumen_m3": 1.55,
+    "valor_declarado": 846267.95,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000519",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Mercado Los Álamos",
+      "direccion": "Av. Colón 1725",
+      "localidad": "Villa María",
+      "provincia": "Cba",
+      "codigo_postal": "5900",
+      "telefono": "1158705354"
+    },
+    "bultos": 11,
+    "peso_kg": "90,1",
+    "volumen_m3": 0.25,
+    "valor_declarado": 1537952.42,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000522",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Pinturerías del Oeste",
+      "direccion": "Rivadavia 2470",
+      "localidad": "Rafaela",
+      "provincia": "Santa Fe",
+      "codigo_postal": "2300",
+      "telefono": "1167032803"
+    },
+    "bultos": 10,
+    "peso_kg": 4.3,
+    "volumen_m3": 1.17,
+    "valor_declarado": 1094675.13,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000526",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Pinturerías del Oeste",
+      "direccion": "Av. San Martín 117",
+      "localidad": "Palermo",
+      "provincia": "CABA",
+      "codigo_postal": "1425",
+      "telefono": "1149637877"
+    },
+    "bultos": 10,
+    "peso_kg": "169,6",
+    "volumen_m3": 1.16,
+    "valor_declarado": 43248.59,
+    "transportista": "Cruz del Norte",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000527",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Librería Central",
+      "direccion": "Av. Colón 4002",
+      "localidad": "Mar del Plata",
+      "provincia": "Bs. As.",
+      "codigo_postal": "7600",
+      "telefono": "1147182670"
+    },
+    "bultos": 5,
+    "peso_kg": 63.0,
+    "volumen_m3": 0.57,
+    "valor_declarado": 29818.34,
+    "transportista": "expreso andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000530",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Gomería El Rulo",
+      "direccion": "Belgrano 4487",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1159959056"
+    },
+    "bultos": 12,
+    "peso_kg": 160.2,
+    "volumen_m3": 1.2,
+    "valor_declarado": 962818.27,
+    "transportista": "CRUZ DEL NORTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000536",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Corralón San Martín",
+      "direccion": "Urquiza 1465",
+      "localidad": "Palermo",
+      "provincia": "CABA",
+      "codigo_postal": "1425",
+      "telefono": "1151135523"
+    },
+    "bultos": 4,
+    "peso_kg": 99.3,
+    "volumen_m3": 0.8,
+    "valor_declarado": 932353.74,
+    "transportista": "EXPRESO ANDINO ",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000541",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Carnicería El Gaucho",
+      "direccion": "Italia 2823",
+      "localidad": "San Miguel de Tucumán",
+      "provincia": "Tucuman",
+      "codigo_postal": "4000",
+      "telefono": "1157237765"
+    },
+    "bultos": 0,
+    "peso_kg": "179,0",
+    "volumen_m3": 0.46,
+    "valor_declarado": 1746174.53,
+    "transportista": "Expreso Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000548",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Veterinaria Patitas",
+      "direccion": "Rivadavia 279",
+      "localidad": "Villa María",
+      "provincia": "Cba",
+      "codigo_postal": "5900",
+      "telefono": "1142303055"
+    },
+    "bultos": 3,
+    "peso_kg": 150.2,
+    "volumen_m3": 1.39,
+    "valor_declarado": 423477.67,
+    "transportista": "Exp. Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000554",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Tienda Sofía",
+      "direccion": "9 de Julio 2554",
+      "localidad": "Mar del Plata",
+      "provincia": "Bs. As.",
+      "codigo_postal": "7600",
+      "telefono": "1165598842"
+    },
+    "bultos": 7,
+    "peso_kg": 54.7,
+    "volumen_m3": 1.03,
+    "valor_declarado": 2387265.46,
+    "transportista": "Exp. Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000556",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Panadería La Espiga",
+      "direccion": "Mitre 4190",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1157028272"
+    },
+    "bultos": 6,
+    "peso_kg": 54.3,
+    "volumen_m3": 1.22,
+    "valor_declarado": 1579402.51,
+    "transportista": "TRANSPORTE LITORAL",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000561",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Laboratorios Andes SA",
+    "destinatario": {
+      "razon_social": "Rotisería Doña Ana",
+      "direccion": "Av. Colón 2587",
+      "localidad": "Mendoza",
+      "provincia": "Mendoza",
+      "codigo_postal": "5500",
+      "telefono": "1158960177"
+    },
+    "bultos": 3,
+    "peso_kg": "45,6",
+    "volumen_m3": 0.92,
+    "valor_declarado": 1531272.04,
+    "transportista": "TRANSPORTE LITORAL",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000567",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Corralón San Martín",
+      "direccion": "Av. San Martín 1103",
+      "localidad": "Palermo",
+      "provincia": "CABA",
+      "codigo_postal": "1425",
+      "telefono": "1166471134"
+    },
+    "bultos": 6,
+    "peso_kg": 147.6,
+    "volumen_m3": 0.15,
+    "valor_declarado": 780854.7,
+    "transportista": "Exp. Andino",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000572",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Ferretería El Tornillo",
+      "direccion": "Av. Colón 1449",
+      "localidad": "Rafaela",
+      "provincia": "Santa Fe",
+      "codigo_postal": "2300",
+      "telefono": "1156133046"
+    },
+    "bultos": 9,
+    "peso_kg": 176.5,
+    "volumen_m3": 0.53,
+    "valor_declarado": 1604126.94,
+    "transportista": "EXPRESO ANDINO ",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000578",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Laboratorios Andes SA",
+    "destinatario": {
+      "razon_social": "Distribuidora Lucía",
+      "direccion": "Moreno 3020",
+      "localidad": "Pilar",
+      "provincia": "BA",
+      "codigo_postal": "1629",
+      "telefono": "1145298971"
+    },
+    "bultos": 6,
+    "peso_kg": 177.3,
+    "volumen_m3": 0.4,
+    "valor_declarado": 249241.52,
+    "transportista": "Cruz del Norte",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000582",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Tienda Sofía",
+      "direccion": "Italia 1214",
+      "localidad": "Rafaela",
+      "provincia": "Santa Fe",
+      "codigo_postal": "2300",
+      "telefono": "1150015999"
+    },
+    "bultos": 5,
+    "peso_kg": "5,2",
+    "volumen_m3": 0.59,
+    "valor_declarado": 1333688.3,
+    "transportista": "Expreso Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000583",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Neumáticos Sur",
+      "direccion": "Urquiza 3983",
+      "localidad": "La Plata",
+      "provincia": "Buenos Aires",
+      "codigo_postal": "1900",
+      "telefono": "1148305403"
+    },
+    "bultos": 8,
+    "peso_kg": "125,9",
+    "volumen_m3": 1.4,
+    "valor_declarado": 2127732.12,
+    "transportista": "CRUZ DEL NORTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000589",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Rotisería Doña Ana",
+      "direccion": "9 de Julio 573",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1168704307"
+    },
+    "bultos": 7,
+    "peso_kg": "139,2",
+    "volumen_m3": 1.22,
+    "valor_declarado": 1527099.22,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000590",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Carnicería El Gaucho",
+      "direccion": "Av. San Martín 383",
+      "localidad": "San Isidro",
+      "provincia": "Buenos Aires",
+      "codigo_postal": "1642",
+      "telefono": "1143739689"
+    },
+    "bultos": 3,
+    "peso_kg": 32.3,
+    "volumen_m3": 1.12,
+    "valor_declarado": 2060712.03,
+    "transportista": "EXPRESO ANDINO ",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000596",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Distribuidora Lucía",
+      "direccion": "Sarmiento 4334",
+      "localidad": "Rosario",
+      "provincia": "Santa Fe",
+      "codigo_postal": "2000",
+      "telefono": "1145018045"
+    },
+    "bultos": 12,
+    "peso_kg": 89.9,
+    "volumen_m3": 1.06,
+    "valor_declarado": 2151257.76,
+    "transportista": "CRUZ DEL NORTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000603",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Casa de Repuestos Tito",
+      "direccion": "Mitre 2012",
+      "localidad": "La Plata",
+      "provincia": "Buenos Aires",
+      "codigo_postal": "1900",
+      "telefono": "1169016450"
+    },
+    "bultos": 5,
+    "peso_kg": 145.2,
+    "volumen_m3": 0.59,
+    "valor_declarado": 1371914.15,
+    "transportista": "TRANSPORTE LITORAL",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000606",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Carnicería El Gaucho",
+      "direccion": "Mitre 631",
+      "localidad": "Pilar",
+      "provincia": "BA",
+      "codigo_postal": "1629",
+      "telefono": "1144772318"
+    },
+    "bultos": 4,
+    "peso_kg": "70,0",
+    "volumen_m3": 0.54,
+    "valor_declarado": 648308.02,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000612",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Pinturerías del Oeste",
+      "direccion": "Sarmiento 3021",
+      "localidad": "Mar del Plata",
+      "provincia": "Bs. As.",
+      "codigo_postal": "7600",
+      "telefono": "1157222413"
+    },
+    "bultos": 8,
+    "peso_kg": "90,8",
+    "volumen_m3": 1.67,
+    "valor_declarado": 111054.19,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000619",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Óptica Visión",
+      "direccion": "Urquiza 1760",
+      "localidad": "Neuquén",
+      "provincia": "Neuquen",
+      "codigo_postal": "8300",
+      "telefono": "1159823596"
+    },
+    "bultos": 2,
+    "peso_kg": 134.6,
+    "volumen_m3": 0.82,
+    "valor_declarado": 956791.83,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000622",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Neumáticos Sur",
+      "direccion": "Moreno 3472",
+      "localidad": "San Miguel de Tucumán",
+      "provincia": "Tucuman",
+      "codigo_postal": "4000",
+      "telefono": "1153569987"
+    },
+    "bultos": 2,
+    "peso_kg": 119.9,
+    "volumen_m3": 1.55,
+    "valor_declarado": 768150.63,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000626",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Autopartes Ruta 8",
+      "direccion": "Italia 3373",
+      "localidad": "Neuquén",
+      "provincia": "Neuquen",
+      "codigo_postal": "8300",
+      "telefono": "1145590205"
+    },
+    "bultos": 12,
+    "peso_kg": "55,3",
+    "volumen_m3": 0.58,
+    "valor_declarado": 851519.32,
+    "transportista": "Cruz del Norte",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000630",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Rotisería Doña Ana",
+      "direccion": "Italia 3712",
+      "localidad": "Pilar",
+      "provincia": "BA",
+      "codigo_postal": "1629",
+      "telefono": "1163941948"
+    },
+    "bultos": 5,
+    "peso_kg": 52.4,
+    "volumen_m3": 1.08,
+    "valor_declarado": 710401.3,
+    "transportista": "TRANSPORTE LITORAL",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000637",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Repuestos Del Litoral SRL",
+    "destinatario": {
+      "razon_social": "Kiosco El Sol",
+      "direccion": "Moreno 1486",
+      "localidad": "Córdoba",
+      "provincia": "Córdoba",
+      "codigo_postal": "5000",
+      "telefono": "1146246187"
+    },
+    "bultos": 9,
+    "peso_kg": 158.0,
+    "volumen_m3": 0.1,
+    "valor_declarado": 1105522.25,
+    "transportista": "Expreso Andino",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000644",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Laboratorios Andes SA",
+    "destinatario": {
+      "razon_social": "Casa de Repuestos Tito",
+      "direccion": "9 de Julio 4766",
+      "localidad": "San Miguel de Tucumán",
+      "provincia": "Tucuman",
+      "codigo_postal": "4000",
+      "telefono": "1163843871"
+    },
+    "bultos": 1,
+    "peso_kg": 148.0,
+    "volumen_m3": 1.73,
+    "valor_declarado": 1944137.29,
+    "transportista": "TRANSPORTE LITORAL",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000646",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Maderera El Pino",
+      "direccion": "Sarmiento 3215",
+      "localidad": "Neuquén",
+      "provincia": "Neuquen",
+      "codigo_postal": "8300",
+      "telefono": "1142591818"
+    },
+    "bultos": 4,
+    "peso_kg": "10,2",
+    "volumen_m3": 0.71,
+    "valor_declarado": 184808.33,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000650",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Ferretería Industrial Norte SA",
+    "destinatario": {
+      "razon_social": "Gomería El Rulo",
+      "direccion": "9 de Julio 3312",
+      "localidad": "Palermo",
+      "provincia": "CABA",
+      "codigo_postal": "1425",
+      "telefono": "1150467579"
+    },
+    "bultos": 3,
+    "peso_kg": "17,3",
+    "volumen_m3": 0.11,
+    "valor_declarado": 69644.42,
+    "transportista": "RETIRA CLIENTE",
+    "servicio": "URGENTE",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000656",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Distribuidora Pampa SA",
+    "destinatario": {
+      "razon_social": "Bazar La Esquina",
+      "direccion": "Mitre 3656",
+      "localidad": "Palermo",
+      "provincia": "CABA",
+      "codigo_postal": "1425",
+      "telefono": "1153426384"
+    },
+    "bultos": 9,
+    "peso_kg": 138.3,
+    "volumen_m3": 1.12,
+    "valor_declarado": 1216697.55,
+    "transportista": "Cruz del Norte",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  },
+  {
+    "nro_remito": "R-10000657",
+    "fecha_remito": "2026-09-30",
+    "cliente": "Textil Del Plata SRL",
+    "destinatario": {
+      "razon_social": "Vinoteca Malbec",
+      "direccion": "Moreno 3532",
+      "localidad": "Caballito",
+      "provincia": "Capital Federal",
+      "codigo_postal": "1405",
+      "telefono": "1159740081"
+    },
+    "bultos": 11,
+    "peso_kg": "10,4",
+    "volumen_m3": 0.28,
+    "valor_declarado": 1076049.27,
+    "transportista": "EXPRESO ANDINO",
+    "servicio": "NORMAL",
+    "observaciones": ""
+  }
+]
